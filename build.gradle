@@ -1,9 +1,25 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'fr.aimcvent'
 version = '1.0-SNAPSHOT'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'fr.aimcvent'
+            artifactId = 'aimcvent-api'
+            version = "1.0-SNAPSHOT"
+            from components.java
+
+            pom {
+                description = 'A description of my library'
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()

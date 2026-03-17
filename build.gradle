@@ -1,23 +1,13 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
 group = 'fr.aimcvent'
 version = '1.0-SNAPSHOT'
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'fr.aimcvent'
-            artifactId = 'aimcvent-api'
-            version = "1.0-SNAPSHOT"
-            from components.java
-
-            pom {
-                description = 'A description of my library'
-            }
-        }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -31,14 +21,13 @@ repositories {
 }
 
 dependencies {
-    compileOnly "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
-    annotationProcessor "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
-    implementation 'com.github.aimcvent:kernel-api:1.0.2'
-
-    // implementation project(':kernel-api');
+    compileOnly "com.velocitypowered:velocity-api:3.5.0-SNAPSHOT"
+    annotationProcessor "com.velocitypowered:velocity-api:3.5.0-SNAPSHOT"
+    implementation 'com.github.aimcvent:kernel-api:1.1.0'
+    implementation 'com.github.aimcvent:player-api:1.1.0'
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion

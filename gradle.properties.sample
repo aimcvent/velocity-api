@@ -1,2 +1,4 @@
 # Relative or Absolute path of kernel api in your file system
 kernel_api_dir = ../../kernel/api
+# Relative or Absolute path of player api in your file system
+player_api_dir = ../../player/api

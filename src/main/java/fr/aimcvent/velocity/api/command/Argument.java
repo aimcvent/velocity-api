@@ -11,5 +11,7 @@ public interface Argument {
 
     List<ArgumentConstraint<?>> constraints();
 
+    boolean optional();
+
     List<Argument> children();
 }

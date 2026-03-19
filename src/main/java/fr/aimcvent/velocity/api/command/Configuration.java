@@ -9,7 +9,7 @@ public interface Configuration {
 
     String usage();
 
-    PermissionCommand permission();
+    String permission();
 
     String[] aliases();
 

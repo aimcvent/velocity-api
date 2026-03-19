@@ -8,7 +8,7 @@ public interface ConfigurationBuilder {
 
     ConfigurationBuilder usage(String usage);
 
-    ConfigurationBuilder permission(PermissionCommand permissionCommand);
+    ConfigurationBuilder permission(String permission);
 
     ConfigurationBuilder aliases(String... aliases);
 
